@@ -6,6 +6,7 @@ import NavSelect from "./components/NavSelect";
 import UserSession from "./components/connection/UserSession";
 import AdminNavButton from "./components/admin/AdminNavButton";
 import { getPromotions } from "./actions/project";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Adaverse",
@@ -48,7 +49,11 @@ export default async function RootLayout({
           {/* 🔥 NavSelect reçoit les promos directement */}
           <NavSelect promos={promos} />
 
-          <AdminNavButton />
+          <AdminNavButton/>
+        <Link href="/favorites" className="relative font-semibold text-ada-red px-4 py-2 bg-black/90  hover:bg-gray-800 transition">
+  Favoris
+
+</Link>
         </nav>
 
         {children}

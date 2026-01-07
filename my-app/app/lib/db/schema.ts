@@ -144,6 +144,14 @@ export const accountRelations = relations(account, ({ one }) => ({
   }),
 }));
 
+export const favoritesTable = pgTable("favorites", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").notNull().references(() => user.id),
+  projectId: integer("project_id").notNull().references(() => projectsTable.id),
+  createdAt: timestamp("created_at").notNull(),
+});
+
+
 // // ✅ AJOUTÉ : Relations pour les projets
 // export const projectRelations = relations(projectsTable, ({ one, many }) => ({
 //   // Un projet appartient à UNE promotion

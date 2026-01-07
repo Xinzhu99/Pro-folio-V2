@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ProjectWithRelations } from "@/app/types";
 import ProjectImage from "./ProjectImage";
+import FavoriteButton from "./favorites/FavoriteButton";
 
 type Props = {
   project: ProjectWithRelations;
@@ -13,6 +14,8 @@ export default function ProjectCard({ project }: Props) {
   const p = project;
 
   return (
+    <div className="relative">
+      <FavoriteButton projectId={project.id} />
     <Link
       href={`/project/${p.slug}`}
       className="group block bg-white rounded-xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 border-2 relative hover:-translate-y-1 border-white cursor-pointer"
@@ -60,5 +63,6 @@ export default function ProjectCard({ project }: Props) {
         </div>
       </div>
     </Link>
+    </div>
   );
 }
