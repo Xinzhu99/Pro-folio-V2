@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ProjectWithRelations } from "@/app/types";
 import ProjectImage from "./ProjectImage";
 import FavoriteButton from "./favorites/FavoriteButton";
-
+//test
 type Props = {
   project: ProjectWithRelations;
 };
