@@ -50,6 +50,7 @@ export default async function RootLayout({
           <NavSelect promos={promos} />
 
           <AdminNavButton />
+          
           <Link href="/favorites" className="relative font-semibold text-ada-red px-4 py-2 bg-black  hover:bg-gray-800 transition rounded-md">
             Favoris
 

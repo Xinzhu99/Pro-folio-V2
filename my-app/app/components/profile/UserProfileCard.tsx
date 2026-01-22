@@ -42,7 +42,7 @@ export default function UserProfileCard({ user }: UserProfileCardProps) {
       // Upload vers un service (exemple avec Cloudinary, Uploadthing, etc.)
       // Pour l'instant, on utilise un service gratuit comme imgbb ou on convertit en base64
       
-      // Option 1 : Convertir en base64 (simple mais pas idéal pour de vraies applis)
+      // Convertir en base64 (simple mais pas idéal pour de vraies applis)
       const reader = new FileReader();
       reader.onloadend = async () => {
         const base64String = reader.result as string;
@@ -53,13 +53,6 @@ export default function UserProfileCard({ user }: UserProfileCardProps) {
       };
       reader.readAsDataURL(file);
 
-      // Option 2 : Upload vers un service externe (à implémenter)
-      // const response = await fetch('/api/upload', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
-      // const { url } = await response.json();
-      // await updateUserImage(url);
 
     } catch (err) {
       setError("Erreur lors du téléchargement de l'image");

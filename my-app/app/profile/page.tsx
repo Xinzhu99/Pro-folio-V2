@@ -14,6 +14,7 @@ export default async function ProfilePage() {
     redirect("/sign-in");
   }
 
+  //récupérer les données utilisateur : user et projets
   const user = session.user;
   const userProjects = await getUserProjects(user.id);
   

@@ -18,7 +18,7 @@ export default async function Admin() {
 
     const connectedUser = await db.select({ isAdmin: user.isAdmin }).from(user).where(eq(user.id, session?.user.id));
 
-    console.log("💩", connectedUser)
+    // console.log("💩", connectedUser)
 
     if (connectedUser[0].isAdmin !== true) {
         redirect("/");
